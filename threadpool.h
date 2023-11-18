@@ -41,7 +41,7 @@ public:
 private:
 	ThreadFunc func_;
 	int threadId_;  // 保存线程id
-	static int generateId_;
+	//static int generateId_;
 };
 
 class ThreadPool {
