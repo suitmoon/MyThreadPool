@@ -179,7 +179,7 @@ Thread::Thread(ThreadFunc func,int threadId_) :func_(func
 {};
 //线程析构
 Thread::~Thread() {};
-int Thread::generateId_ = 0;
+//int Thread::generateId_ = 0;
 // 启动线程
 void Thread::start() {
 	//创建一个线程来执行一个线程函数
