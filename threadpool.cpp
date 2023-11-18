@@ -26,10 +26,10 @@ ThreadPool::~ThreadPool()
 {
 	//置标记为为关闭
 	isPoolRunning_ = false;
-	notEmpty_.notify_all();
+
 	//等待线程池所有线程返回
 	std::unique_lock<std::mutex> lock(taskQueMtx_);
-
+	notEmpty_.notify_all();
 	exitCond_.wait(lock, [&]()->bool {return threads_.size() == 0; });
 }
 // 设置线程池的工作模式
